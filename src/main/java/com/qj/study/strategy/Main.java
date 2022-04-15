@@ -18,7 +18,13 @@ public class Main {
         Sorter<Dog> sorter = new Sorter();
         sorter.sort(b, new DogComparator());
         Sorter<Cat> catSorter = new Sorter<>();
-        catSorter.sort(a, new CatComparator());
+//        catSorter.sort(a, new CatWeightComparator());
+        // 也可以使用函数式接口（只有一个方法的接口）
+        catSorter.sort(a, (o1, o2) -> {
+          if(o1.weight < o2.weight) return -1;
+          else if(o1.weight > o2.weight) return 1;
+          return  0;
+        });
 
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));

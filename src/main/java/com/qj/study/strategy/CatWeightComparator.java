@@ -1,6 +1,6 @@
 package com.qj.study.strategy;
 
-public class CatComparator implements Comparator<Cat>{
+public class CatWeightComparator implements Comparator<Cat>{
 
     @Override
     public int compare(Cat o1, Cat o2) {
